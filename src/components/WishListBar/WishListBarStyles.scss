@@ -1,0 +1,103 @@
+.wishListBar {
+  display: flex;
+  margin-top: 15px;
+  text-align: center;
+  align-items: flex-end;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 210px;
+  height: calc(100vh - 160px);
+  font-size: 1rem;
+  border: 1px solid white;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  -moz-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  overflow-y: auto;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 1024px) {
+  .wishListBar {
+    min-height: 100%;
+    height: 100vh;
+    margin-top: 0px;
+    border-radius: 0px;
+  }
+}
+
+.item {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.bookTitle {
+  color: #003d82;
+  order: 0;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+}
+.bookTitle:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #93d948;
+  transform: scaleX(0);
+  transition: transform 100ms ease-in-out;
+}
+.bookTitle:hover:after {
+  transform: scaleX(1);
+  cursor: pointer;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 5px;
+}
+
+.itemButtonS {
+  height: 17px;
+  width: 17px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: inherit;
+  border-radius: 50%;
+  outline: none;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/8/8f/Flat_cross_icon.svg");
+  background-size: cover;
+  -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  -moz-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  cursor: pointer;
+}
+@keyframes spin {
+  100% {
+    transform: translateX(1px) translateY(-1px);
+    -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+    -moz-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+    box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+.itemButtonS:active {
+  border: 2px solid rgb(255, 255, 255);
+  outline: none;
+}
+.itemButtonS:hover {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-animation: spin 1.3s linear infinite;
+  -moz-animation: spin 1.3s linear infinite;
+  animation: spin 1.3s linear infinite;
+}

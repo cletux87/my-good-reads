@@ -1,0 +1,96 @@
+.itemTitle {
+  font-size: 0.9rem;
+  text-shadow: 0.5px 0.5px 2px rgb(206, 206, 206);
+  font-weight: 400;
+  padding-left: 5px;
+  //   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @supports (-webkit-line-clamp: 3) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+.itemAuthor {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: grey;
+  font-weight: 400;
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
+.bookInfoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100px;
+ background: -webkit-linear-gradient(top,#000 95%, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.wish {
+  position: absolute;
+  z-index: 1;
+  margin-left: 160px;
+  margin-top: 5px;
+  border-radius: 50%;
+  border: 1px solid white;
+  background-color: rgb(233, 233, 233);
+  padding-top: 2px;
+  padding-right: 6px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  -moz-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  box-shadow: 1px 1px 1px grey, 0 0 1px black;
+}
+
+.wish:hover {
+  -webkit-box-shadow: 2px 2px 2px pink, 0 0 2px red;
+  -moz-box-shadow: 2px 2px 2px pink, 0 0 2px red;
+  box-shadow: 2px 2px 2px pink, 0 0 2px red;
+  -webkit-animation: breathe 1.2s linear infinite;
+  -moz-animation: breathe 1.2s linear infinite;
+  animation: breathe 1.2s linear infinite;
+}
+
+.wish:active {
+  transform: translateX(1px) translateY(-2px);
+  border: 2px solid rgb(255, 255, 255);
+  outline: none;
+  animation: breathe 0s linear infinite;
+}
+
+@keyframes breathe {
+  50% {
+    transform: translateX(1px) translateY(-2px);
+    -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    -moz-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    box-shadow: 1px 1px 5px grey, 0 0 5px red;
+  }
+  49% {
+    -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    -moz-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    box-shadow: 1px 1px 5px grey, 0 0 5px red;
+  }
+  51% {
+    -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    -moz-box-shadow: 1px 1px 1px grey, 0 0 1px red;
+    box-shadow: 1px 1px 5px grey, 0 0 5px red;
+  }
+}

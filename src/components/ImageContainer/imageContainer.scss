@@ -1,0 +1,36 @@
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 250px;
+  background-color: #fafafa;
+  border: 1px solid rgb(255, 255, 255);
+  margin-bottom: 10px;
+  border-radius: 4px;
+  position: relative;
+  -webkit-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  -moz-box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  box-shadow: 1px 1px 1px grey, 0 0 1px black;
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+  cursor: pointer;
+  img {
+    width: 160px;
+    height: 210px;
+    cursor: pointer;
+  }
+}
+
+.imageContainer:hover {
+  transform: translate(1px, -1px);
+  background: linear-gradient(
+    0deg,
+    rgba(138, 152, 161, 0.513) 0%,
+    rgba(255, 255, 255, 0.44861694677871145) 100%
+  );
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+  -webkit-transition-duration: 0.2s; /* Safari */
+  transition-duration: 0.2s;
+}
