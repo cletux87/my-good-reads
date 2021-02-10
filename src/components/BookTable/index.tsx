@@ -11,7 +11,7 @@ const BookTable = () => {
     return (
       <>
         <div id="bookTableContainer" className="bookTableContainer">
-          {listOfBooks.books.items.map((value: any, index: any) => {
+          {listOfBooks.books.items.map((value: any, index: number) => {
             return (
               <>
                 <div

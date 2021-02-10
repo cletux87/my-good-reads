@@ -22,7 +22,7 @@ const BookElement = (props: any) => {
       return false;
     } else {
       const index = listOfBooks.myFavorites.findIndex(
-        (value: any) => value.id === book.id
+        (value: {id:number}) => value.id === book.id
       );
       return index === -1 ? false : true;
     }

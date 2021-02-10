@@ -29,19 +29,6 @@ context("Render", () => {
   });
 });
 
-// context("Search", () => {
-//   beforeEach(() => {
-//     cy.visit("baseUrl");
-//   });
-
-//   it("Search for books and find elements", () => {
-//     cy.get('[id="searchbarInputSpace"]').type("Java");
-//     cy.get('[id="searchbarButton"]').click();
-//     cy.get('[id="bookTableContainer"]').should("be.visible");
-//     cy.get('[id="bookElement"]').should("be.visible");
-//   });
-// });
-
 context("Wishlist", () => {
   beforeEach(() => {
     cy.visit("baseUrl");
@@ -84,20 +71,3 @@ context("Wishlist", () => {
   });
 });
 
-// context("Pagination", () => {
-//   beforeEach(() => {
-//     cy.visit("baseUrl");
-//   });
-//   it("Interact with pagination", () => {
-//     cy.get('[id="searchbarInputSpace"]').type("Java");
-//     cy.get('[id="searchbarButton"]').click();
-//     cy.get('[id="paginationIndex:0"]').as("currentPagination");
-//     cy.get("@currentPagination").should("contain", 1);
-//     cy.get('[id="forwardPagination"]').click();
-//     cy.get('[id="paginationIndex:1"]').as("currentPagination");
-//     cy.get("@currentPagination").should("contain", 2);
-//     cy.get('[id="backwardPagination"]').click();
-//     cy.get('[id="paginationIndex:0"]').as("currentPagination");
-//     cy.get("@currentPagination").should("contain", 1);
-//   });
-// });
