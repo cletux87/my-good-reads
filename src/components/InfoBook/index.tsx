@@ -11,9 +11,9 @@ const InfoBook = (props: any) => {
   }, []);
 
   return (
-    <div className="infoBookContainer">
+    <section className="infoBookContainer">
       <h1>{book.volumeInfo.title}</h1>
-      <div className="infoBookContent">
+      <article className="infoBookContent">
         <div className='infoBookImage'>
           <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="Book Cover"/>
           <span>ISBN:{
@@ -38,9 +38,9 @@ const InfoBook = (props: any) => {
         <div className='infoBookDescription'>
           <label>{book.volumeInfo.description}</label>
         </div>
-      </div>
+      </article>
       <a className="infoBookPreview" href={book.volumeInfo.previewLink} target="_blank">Check Preview</a>
-    </div>
+    </section>
   );
 };
 

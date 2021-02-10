@@ -58,12 +58,12 @@ const BookElement = (props: any) => {
           alt={`${book.volumeInfo.title} cover`}
         />
       </div>
-      <div className="bookInfoContainer">
+      <section className="bookInfoContainer">
         <div className="itemTitle">{book.volumeInfo.title}</div>
-        <div className="itemAuthor">
+        <article className="itemAuthor">
           {book.volumeInfo.authors ? `by ${book.volumeInfo.authors}` : null}
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   );
 };
