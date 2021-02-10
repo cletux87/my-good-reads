@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import BookElement from "../BookElement";
+import * as Utils from '../../Utils';
 import "./bookTable.scss";
 
 const BookTable = () => {
@@ -27,11 +28,7 @@ const BookTable = () => {
     );
   }
 
-  function isNil(value: any) {
-    return value === undefined || value === null ? true : false;
-  }
-
-  return <div>{!isNil(listOfBooks.books.items) ? renderTable() : null}</div>;
+  return <div>{!Utils.isNil(listOfBooks.books.items) ? renderTable() : null}</div>;
 };
 
 export default BookTable;

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import * as BookActions from "../../book-search/book-search-actions";
+import * as BookActions from "../../service/book-search/book-search-actions";
 import "./bookTablePagination.scss";
 
 const BookTablePagination = () => {

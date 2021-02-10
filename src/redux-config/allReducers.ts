@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import booksReducer from '../book-search/book-search-reducer';
-import favoritesReducer from '../service/favorites-responsive/favorites-responsive-reducer';
+import booksReducer from '../service/book-search/book-search-reducer'
+import favoritesReducer from '../service/favorites-searchbar/favorites-searchbar-reducer';
 
 export default combineReducers({
     booksReducer,

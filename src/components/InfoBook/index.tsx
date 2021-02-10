@@ -15,7 +15,7 @@ const InfoBook = (props: any) => {
       <h1>{book.volumeInfo.title}</h1>
       <div className="infoBookContent">
         <div className='infoBookImage'>
-          <img src={book.volumeInfo.imageLinks.smallThumbnail} />
+          <img src={book.volumeInfo.imageLinks.smallThumbnail} alt="Book Cover"/>
           <span>ISBN:{
             !Utils.isNil(book.volumeInfo.industryIdentifiers) && book.volumeInfo.industryIdentifiers.length > 0 ?
               book.volumeInfo.industryIdentifiers[0].identifier

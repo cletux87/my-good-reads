@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as BookActions from "../../book-search/book-search-actions";
+import * as BookActions from "../../service/book-search/book-search-actions";
 import InfoBook from '../InfoBook';
 import * as Utils from "../../Utils";
 import Popup from '../Popup';

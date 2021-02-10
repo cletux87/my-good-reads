@@ -1,4 +1,4 @@
-import * as FavoriteResponse from './favorite-responsive-actions';
+import * as FavoriteResponse from './favorite-searchbar-actions';
 
 const INITIAL_STATE: any = {
     show: false,

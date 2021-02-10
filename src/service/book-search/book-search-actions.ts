@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getBooksByType, getBooksByTypeWithPagination } from "./book-search.service";
+import { getBooksByType, getBooksByTypeWithPagination } from "./book-search-service";
 
 let Actions: any = {};
 
