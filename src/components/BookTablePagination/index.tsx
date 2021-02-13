@@ -22,7 +22,7 @@ const BookTablePagination = () => {
   }
 
   function renderButtons() {
-    let viewPage: any = [];
+    let viewPage: number[] = [];
     const index = listOfBooks.currentIndex;
     if (currentIndex === 0) {
       viewPage = [0];
