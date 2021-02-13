@@ -37,6 +37,7 @@ const BookTablePagination = () => {
             id="backwardPagination"
             onClick={() => handleIndexClick(listOfBooks.currentIndex - 1)}
             className="paginationRoundButton"
+            key="leftArrow"
           >
             {"<"}
           </button>
@@ -47,6 +48,7 @@ const BookTablePagination = () => {
             <button
               id={`paginationIndex:${index}`}
               onClick={() => handleIndexClick(value)}
+              key={value}
               className={
                 value === index
                   ? "paginationCurrentSquareButton"
@@ -61,6 +63,7 @@ const BookTablePagination = () => {
           id="forwardPagination"
           onClick={() => handleIndexClick(listOfBooks.currentIndex + 1)}
           className="paginationRoundButton"
+          key="rightArrow"
         >
           {">"}
         </button>

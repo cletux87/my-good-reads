@@ -52,7 +52,7 @@ const BookElement = (props: BookElementProps) => {
   }, [listOfBooks]);
 
   return (
-    <li id="bookElement" className={className}>
+    <li id="bookElement" className={className} key={book.id}>
        { showBook ? <Popup closed={()=>setShowBook(false)} ><InfoBook book={book}/></Popup> : null }
       <button id="wishButton" className="wish" onClick={() => sendWishList()}>
         <Wish fill={isWishList ? "red" : "#969696"} />
