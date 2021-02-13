@@ -4,16 +4,15 @@ import './imageContainer.scss';
 
 interface Props{
     alt: string,
-    imageSource: string
+    imageSource: string,
+    onClick: Function
 }
 
 const ImageContainer = (props:Props) => {
-    const { imageSource, alt} = props;
+    const { imageSource, alt, onClick} = props;
     return (
-      <div className='imageContainer'>
-        <a href="#">
+      <div className='imageContainer' onClick={() => onClick()}>
           <img src={imageSource} alt={alt} />
-        </a>
       </div>
     );
   };

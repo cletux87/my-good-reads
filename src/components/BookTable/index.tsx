@@ -9,22 +9,18 @@ const BookTable = () => {
 
   function renderTable() {
     return (
-      <>
-        <div id="bookTableContainer" className="bookTableContainer">
-          {listOfBooks.books.items.map((value: any, index: number) => {
-            return (
-              <>
-                <div
+      <ul id="bookTableContainer" className="bookTableContainer">
+        {listOfBooks.books.items.map((value: any, index: number) => {
+          return (
+              <BookElement 
+                  book={value} 
+                  key={value.id} 
                   data-cy={`bookElementIndex:${index}`}
-                  className="bookElementInfoContainer"
-                >
-                  <BookElement book={value} key={value.id} />
-                </div>
-              </>
-            );
-          })}
-        </div>
-      </>
+                  className="bookElementInfoContainer" 
+              />
+          );
+        })}
+      </ul>
     );
   }
 

@@ -9,7 +9,7 @@ import "./BookElementStyle.scss";
 import { ReactComponent as Wish } from "./wishHeart.svg";
 
 const BookElement = (props: any) => {
-  const { book } = props;
+  const { book, className } = props;
   const [showBook, setShowBook] = useState(false);
   const listOfBooks = useSelector((state: any) => state.booksReducer);
   const [isWishList, setIsWishList] = useState(() => {
@@ -42,13 +42,12 @@ const BookElement = (props: any) => {
   }, [listOfBooks]);
 
   return (
-    <div id="bookElement">
+    <li id="bookElement" className={className}>
        { showBook ? <Popup closed={()=>setShowBook(false)} ><InfoBook book={book}/></Popup> : null }
       <button id="wishButton" className="wish" onClick={() => sendWishList()}>
         <Wish fill={isWishList ? "red" : "#969696"} />
       </button>
-      <div  onClick={() => setShowBook(true)}>
-        <ImageContainer
+      <ImageContainer
           imageSource={
             Utils.isNil(book.volumeInfo.imageLinks) ||
             Utils.isNil(book.volumeInfo.imageLinks.smallThumbnail)
@@ -56,15 +55,15 @@ const BookElement = (props: any) => {
               : book.volumeInfo.imageLinks.smallThumbnail
           }
           alt={`${book.volumeInfo.title} cover`}
-        />
-      </div>
+          onClick={() => setShowBook(true)}
+      />
       <section className="bookInfoContainer">
-        <div className="itemTitle">{book.volumeInfo.title}</div>
+        <h1 className="itemTitle">{book.volumeInfo.title}</h1>
         <article className="itemAuthor">
           {book.volumeInfo.authors ? `by ${book.volumeInfo.authors}` : null}
         </article>
       </section>
-    </div>
+    </li>
   );
 };
 

@@ -6,7 +6,7 @@ import "./WishListHeaderStyles.scss";
 const WishListHeader = () => {
   const listOfBooks = useSelector((state: any) => state.booksReducer);
 
-  return (
+  return ( //anidar coin with number
     <div id="wishListHeader" className="wishListContainer">
       <label>My Reading Wish list</label>
       <div className="wishListNumber">
