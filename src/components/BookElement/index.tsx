@@ -5,7 +5,7 @@ import InfoBook from '../InfoBook';
 import * as Utils from "../../Utils";
 import Popup from '../Popup';
 import ImageContainer from "../ImageContainer";
-import { BookType, InfoBookType } from '../../service/book-search/book-search-reducer';
+import { AllBooksSearchTypes, InfoBookType } from '../../service/book-search/book-search-reducer';
 import "./BookElementStyle.scss";
 import { ReactComponent as Wish } from "./wishHeart.svg";
 
@@ -14,10 +14,14 @@ interface BookElementProps{
   className:string
 }
 
+interface RootState{
+  booksReducer: AllBooksSearchTypes
+}
+
 const BookElement = (props: BookElementProps) => {
   const { book, className } = props;
   const [showBook, setShowBook] = useState(false);
-  const listOfBooks = useSelector((state: any) => state.booksReducer);
+  const listOfBooks = useSelector((state: RootState) => state.booksReducer);
   const [isWishList, setIsWishList] = useState(() => {
     return isInWishList();
   });

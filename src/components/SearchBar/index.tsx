@@ -36,11 +36,9 @@ function SearchBar() {
   return (
     <div id="searchbarBackground">
       <div id="searchbarMainContainer">
-        <a href="">
           <div id="searchbarLogoContainer">
             <img src="images/ebay-2.svg" alt="eBay logo" />
           </div>
-        </a>
 
         <div id="searchbarInputSpace">
           <input

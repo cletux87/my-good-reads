@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import * as Utils from '../../Utils';
 import { InfoBookType } from '../../service/book-search/book-search-reducer';
 import "./InfoBook.scss";

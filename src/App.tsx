@@ -7,7 +7,6 @@ import BookTablePagination from "./components/BookTablePagination";
 import WishListBar from "./components/WishListBar";
 import Home from './components/Home';
 import * as Utils from "./Utils";
-import { ReducerTypes } from './service/ui/ui-reducer';
 import "./styles/App.scss";
 
 function App() {
