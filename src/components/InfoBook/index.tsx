@@ -1,14 +1,15 @@
 import React, {useEffect} from "react";
 import * as Utils from '../../Utils';
+import { InfoBookType } from '../../service/book-search/book-search-reducer';
 import "./InfoBook.scss";
 
-const InfoBook = (props: any) => {
+interface InfoBookProps{
+  book: InfoBookType,
+}
+
+const InfoBook = (props: InfoBookProps) => {
 
   const {book} = props;
-
-  useEffect(()=>{
-    console.log(book);
-  }, []);
 
   return (
     <section className="infoBookContainer">

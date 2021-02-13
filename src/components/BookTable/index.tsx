@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import BookElement from "../BookElement";
 import * as Utils from '../../Utils';
+import { InfoBookType } from '../../service/book-search/book-search-reducer';
 import "./bookTable.scss";
 
 const BookTable = () => {
@@ -10,7 +11,7 @@ const BookTable = () => {
   function renderTable() {
     return (
       <ul id="bookTableContainer" className="bookTableContainer">
-        {listOfBooks.books.items.map((value: any, index: number) => {
+        {listOfBooks.books.items.map((value: InfoBookType, index: number) => {
           return (
               <BookElement 
                   book={value} 

@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
+import { AllBooksSearchTypes } from '../../service/book-search/book-search-reducer';
 import * as BookActions from "../../service/book-search/book-search-actions";
 import * as WishListActions from "../../service/ui/ui-actions";
-
 import "./SearchBar.scss";
+
+interface RootState{
+  booksReducer: AllBooksSearchTypes
+}
 
 function SearchBar() {
   const [userInput, setUserInput] = useState("");
   const dispatch = useDispatch();
-  const listOfBooks = useSelector((state: any) => state.booksReducer);
+  const listOfBooks = useSelector((state: RootState) => state.booksReducer);
 
   function handleSearch(e: React.MouseEvent<HTMLDivElement, MouseEvent>) {
     e.preventDefault();

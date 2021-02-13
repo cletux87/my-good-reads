@@ -5,10 +5,16 @@ import InfoBook from '../InfoBook';
 import * as Utils from "../../Utils";
 import Popup from '../Popup';
 import ImageContainer from "../ImageContainer";
+import { BookType, InfoBookType } from '../../service/book-search/book-search-reducer';
 import "./BookElementStyle.scss";
 import { ReactComponent as Wish } from "./wishHeart.svg";
 
-const BookElement = (props: any) => {
+interface BookElementProps{
+  book: InfoBookType,
+  className:string
+}
+
+const BookElement = (props: BookElementProps) => {
   const { book, className } = props;
   const [showBook, setShowBook] = useState(false);
   const listOfBooks = useSelector((state: any) => state.booksReducer);
@@ -22,7 +28,7 @@ const BookElement = (props: any) => {
       return false;
     } else {
       const index = listOfBooks.myFavorites.findIndex(
-        (value: {id:number}) => value.id === book.id
+        (value: {id:string}) => value.id === book.id
       );
       return index === -1 ? false : true;
     }

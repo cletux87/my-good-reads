@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as BookActions from "../../service/book-search/book-search-actions";
+import { emptyValues } from '../../service/book-search/book-search-reducer';
 import * as WishListActions from "../../service/ui/ui-actions";
 import Popup from '../Popup';
 import InfoBook from '../InfoBook';
@@ -13,7 +14,7 @@ interface Props {
 function WishListBar(props: Props) {
   const { position } = props;
   const [showBook, setShowBook] = useState(false);
-  const [indexBook, setIndexBook] = useState({});
+  const [indexBook, setIndexBook] = useState(emptyValues);
   const listOfBooks = useSelector((state: any) => state.booksReducer);
   const dispatch = useDispatch();
 

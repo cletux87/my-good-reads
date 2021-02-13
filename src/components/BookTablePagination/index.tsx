@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as BookActions from "../../service/book-search/book-search-actions";
+import { AllBooksSearchTypes } from '../../service/book-search/book-search-reducer';
 import "./bookTablePagination.scss";
 
+interface RootState{
+  booksReducer: AllBooksSearchTypes
+}
+
 const BookTablePagination = () => {
-  const listOfBooks = useSelector((state: any) => state.booksReducer);
+  const listOfBooks = useSelector((state: RootState) => state.booksReducer);
   const [currentIndex, setCurrentIndex] = useState(0);
   const dispatch = useDispatch();
 

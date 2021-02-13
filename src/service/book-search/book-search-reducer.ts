@@ -1,7 +1,53 @@
 
 import * as BookSearchActions from './book-search-actions';
 
-interface ReducerProps{
+export interface AllBooksSearchTypes{
+    books: BookType,
+    error: string,
+    currentIndex: number,
+    maxResults: number,
+    type: string,
+    myFavorites: BookType
+}
+
+export interface InfoBookType{
+    book:BookType,
+    volumeInfo: VolumeInfoType,
+    id: string
+  }
+  
+  export interface BookType{
+    volumeInfo: VolumeInfoType,
+    id: string,
+    findIndex: Function,
+    length: number
+  }
+  
+  interface VolumeInfoType{
+    title: string,
+    industryIdentifiers: IndustryIdentifiersType[],
+    authors: AuthorsType,
+    categories: CategoriesType,
+    description: string,
+    previewLink: string,
+    imageLinks: any
+  }
+  
+  interface IndustryIdentifiersType{
+    identifier: string
+  }
+  
+  interface AuthorsType{
+    [index: number]: string,
+    length: number
+  }
+  
+  interface CategoriesType{
+    [index: number]: string,
+    length: number
+  }
+
+interface ReducerType{
     books: any,
     error: string,
     currentIndex: number,
@@ -11,7 +57,7 @@ interface ReducerProps{
 
 }
 
-const INITIAL_STATE: ReducerProps = {
+const INITIAL_STATE: ReducerType = {
     books: [],
     error: '',
     currentIndex: 0,
@@ -20,8 +66,34 @@ const INITIAL_STATE: ReducerProps = {
     myFavorites: []
     
 }
+const emptyVolume: VolumeInfoType = {
+    title: "",
+    industryIdentifiers: [],
+    authors: [],
+    categories: [],
+    description: "",
+    previewLink: "",
+    imageLinks: ""
 
-export default ( state = INITIAL_STATE, action:any ) =>{
+}
+
+export const emptyValues: InfoBookType ={
+    book:{
+        id:"",
+        volumeInfo: emptyVolume,
+        findIndex: ()=>null,
+        length:0
+    },
+    volumeInfo: emptyVolume,
+    id: ""
+}
+
+interface Action{
+    type:string,
+    payload:any
+}
+
+export default ( state = INITIAL_STATE, action:Action ) =>{
     switch ( action.type ){
         case(BookSearchActions.ActionTypes.GET_SEARCH_BOOKS):
             return {...state, error:'', books: action.payload.response, currentIndex: 0, type: action.payload.searchWord };
