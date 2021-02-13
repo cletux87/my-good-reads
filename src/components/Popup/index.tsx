@@ -3,7 +3,7 @@ import './popup.scss';
 
 type PopupType = {
     closed: Function,
-    children: any
+    children: JSX.Element
 }
 
 const Popup = (props:PopupType) =>{

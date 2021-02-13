@@ -1,7 +1,17 @@
 
 import * as BookSearchActions from './book-search-actions';
 
-const INITIAL_STATE: any = {
+interface ReducerProps{
+    books: any,
+    error: string,
+    currentIndex: number,
+    maxResults: number,
+    type: string,
+    myFavorites: any
+
+}
+
+const INITIAL_STATE: ReducerProps = {
     books: [],
     error: '',
     currentIndex: 0,
@@ -13,13 +23,13 @@ const INITIAL_STATE: any = {
 
 export default ( state = INITIAL_STATE, action:any ) =>{
     switch ( action.type ){
-        case(BookSearchActions.Actions.types.GET_SEARCH_BOOKS):
+        case(BookSearchActions.ActionTypes.GET_SEARCH_BOOKS):
             return {...state, error:'', books: action.payload.response, currentIndex: 0, type: action.payload.searchWord };
-        case( BookSearchActions.Actions.types.GET_SEARCH_BOOKS_WITH_PAGINATION ):
+        case( BookSearchActions.ActionTypes.GET_SEARCH_BOOKS_WITH_PAGINATION ):
             return {...state, error:'', books: action.payload.response, currentIndex: action.payload.index };
-        case(BookSearchActions.Actions.types.ERROR_GETTING_BOOKS):
+        case(BookSearchActions.ActionTypes.ERROR_GETTING_BOOKS):
             return {...state, error: action.payload};
-        case(BookSearchActions.Actions.types.ADD_BOOK_TO_WISHLIST):{
+        case(BookSearchActions.ActionTypes.ADD_BOOK_TO_WISHLIST):{
             const index = state.books.items.findIndex( (value:any) => value.id === action.payload );
             const indexInFavorites = state.myFavorites.findIndex( (value:any) => value.id === action.payload );
             if( indexInFavorites === -1 ){
@@ -32,7 +42,7 @@ export default ( state = INITIAL_STATE, action:any ) =>{
                 return {...state};
             }
         }
-        case(BookSearchActions.Actions.types.REMOVE_BOOK_FROM_WISHLIST):{
+        case(BookSearchActions.ActionTypes.REMOVE_BOOK_FROM_WISHLIST):{
             const index = state.myFavorites.findIndex( (value:any) => value.id === action.payload );
             if( index === -1 ){
                 return {...state};

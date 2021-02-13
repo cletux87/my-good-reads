@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import * as BookActions from "../../service/book-search/book-search-actions";
-import * as WishListActions from "../../service/favorites-searchbar/favorite-searchbar-actions";
+import * as WishListActions from "../../service/ui/ui-actions";
 import Popup from '../Popup';
 import InfoBook from '../InfoBook';
 import "./WishListBarStyles.scss";
